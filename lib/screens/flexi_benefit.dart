@@ -107,6 +107,7 @@ class FlexiBenefit extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 8,),
                                 GridView.builder(
+                                    physics: NeverScrollableScrollPhysics(),
                                     itemCount: modesLength,
                                     shrinkWrap: true,
                                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -163,6 +164,7 @@ class FlexiBenefit extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 16,),
                                 ListView.builder(
+                                    physics: NeverScrollableScrollPhysics(),
                                     itemCount: faqLength,
                                     shrinkWrap: true,
                                     itemBuilder: (context,index){

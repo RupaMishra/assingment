@@ -36,49 +36,43 @@ class BenefitsList extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             SingleChildScrollView(
-              child:  Padding(
-                padding: const EdgeInsets.only(bottom: 100),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(12, 16, 12, 150),
                 child: Column(
                   children: [
-                    Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 12.0),
-                        child:Column(
-                          children: [
-                            Text(
-                              textAlign: TextAlign.center,
-                              "Explore various tax-saving allowances available to you and opt for those that make the most sense for you",
-                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'Inter',color: Colors.grey[500]),
+                    Text(
+                      "Explore various tax-saving allowances available to you and opt for those that make the most sense for you",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, fontFamily: 'Inter', color: Colors.grey[500]),
+                    ),
+                    const SizedBox(height: 16,),
+                    ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: flexiDataList.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context,index){
+                        return Container(
+                            margin: const EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFFAFAFA),
+                              borderRadius: BorderRadius.circular(12), // Rounded corners with radius of 12
+                              border: Border.all(color: const Color(0xFFFEEEEEE)), // Border properties
                             ),
-                            const SizedBox(height: 16,),
-                            ListView.builder(
-                                itemCount: flexiDataList.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context,index){
-                                  return Container(
-                                    margin: const EdgeInsets.all(8.0),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFFFAFAFA),
-                                      borderRadius: BorderRadius.circular(12), // Rounded corners with radius of 12
-                                      border: Border.all(color: const Color(0xFFFEEEEEE)), // Border properties
-                                    ),
-                                    child: BenefitsTile(
-                                      primaryColor: flexiDataList[index].primarycolor,
-                                      secondaryColor: flexiDataList[index].secondarycolor,
-                                      icon: flexiDataList[index].icon,
-                                      title:flexiDataList[index].title,
-                                      allowance: flexiDataList[index].allocationFund,
-                                      index: index,
-                                      isClickable: true,
-                                      onPressed: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FlexiBenefit(data: flexiDataList[index],index: index,)));
-                                      },
-                                    )
-                                  );
-                                }
-                            ),
-                          ],
-                        )
-                    )
+                            child: BenefitsTile(
+                              primaryColor: flexiDataList[index].primarycolor,
+                              secondaryColor: flexiDataList[index].secondarycolor,
+                              icon: flexiDataList[index].icon,
+                              title:flexiDataList[index].title,
+                              allowance: flexiDataList[index].allocationFund,
+                              index: index,
+                              isClickable: true,
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>FlexiBenefit(data: flexiDataList[index],index: index,)));
+                              },
+                            )
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -98,9 +92,9 @@ class BenefitsList extends StatelessWidget {
                   ),
                   const SizedBox(height: 12,),
                   LinearProgressIndicator(
-                    value: allocatedAmtProgress>0.01?allocatedAmtProgress:0.01,
+                    value: allocatedAmtProgress > 0.01 ? allocatedAmtProgress : 0.01,
                     semanticsLabel: 'Linear progress indicator',
-                    color:Color(0xFFF42D499),
+                    color: Color(0xFFF42D499),
                     borderRadius: BorderRadius.circular(16),
                     minHeight: 7,
                   ),
@@ -109,8 +103,7 @@ class BenefitsList extends StatelessWidget {
                     width: double.infinity,
                     height: 62,
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       icon: const Text("Continue",style: TextStyle(color: Colors.white,fontFamily: 'Inter',fontWeight: FontWeight.w600),),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFF191919),
