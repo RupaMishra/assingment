@@ -183,7 +183,7 @@ class MyDataSet with ChangeNotifier {
     ),
   ];
 
-  void updateAllocationFund(int newValue, int index) {
+  void updateAllocatedFund(int newValue, int index) {
     if (index >= 0 && index < flexiDataList.length ) {
       if(flexiDataList[index].allocatedFund+newValue<flexiDataList[index].allocationFund && allocatdMoney<10000 && allocatdMoney+newValue<=10000) {
         flexiDataList[index].allocatedFund = newValue;

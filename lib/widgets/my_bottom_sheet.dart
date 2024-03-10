@@ -112,7 +112,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                               onPressed: (){
                                 // updateAllocation(myVariables,currAllocatedAmt,index);
                                 try {
-                                  myVariables.updateAllocationFund(currAllocatedAmt , index);
+                                  myVariables.updateAllocatedFund(currAllocatedAmt , index);
                                 } catch (e) {
                                   setState(() {
                                     allocatedAmt = data.allocatedFund;
