@@ -46,7 +46,7 @@ dev_dependencies:
       url: https://github.com/ponnamkarthik/FlutterToast.git
 
 flutter_launcher_icons:
-  image_path: "assets/icons/tortoise.png"
+  image_path: "assets/icons/tortoise.jpg"
   android: 'launcher_icon'
   ios: true
 
