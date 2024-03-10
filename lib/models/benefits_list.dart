@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ListBenefits {
-  int color;
+  int primarycolor;
+  int secondarycolor;
   String icon;
   String title;
   int allocationFund;
+  int allocatedFund;
   String desc;
   String benefits;
   HowItWorks howItWorks;
   List<FAQs> faqs;
 
-  ListBenefits({required this.color,required this.icon,required this.title,required this.allocationFund,required this.desc,required this.benefits,required this.howItWorks,required this.faqs});
+  ListBenefits({required this.primarycolor,required this.secondarycolor,required this.icon,required this.title,required this.allocationFund,required this.allocatedFund,required this.desc,required this.benefits,required this.howItWorks,required this.faqs});
 }
 
 

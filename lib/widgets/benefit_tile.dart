@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class BenefitsTile extends StatelessWidget {
 
   final String icon;
-  final int color;
+  final int primaryColor;
+  final int secondaryColor;
   final String title;
   final int allowance;
   final int index;
@@ -13,7 +14,8 @@ class BenefitsTile extends StatelessWidget {
 
    const BenefitsTile({
      super.key,
-     required this.color,
+     required this.primaryColor,
+     required this.secondaryColor,
      required this.icon,
      required this.title,
      required this.allowance,
@@ -33,11 +35,16 @@ class BenefitsTile extends StatelessWidget {
     return ClickableContainer(
       onTap: onPressed,
       child:  Container(
-          height: 160,
+          // height: 148,
+        padding: EdgeInsets.all(2),
           decoration:  BoxDecoration(
+            border: Border.all(color:isClickable? Colors.transparent:Color(primaryColor)),
+            borderRadius: BorderRadius.circular(12),
+            color: isClickable? Colors.transparent:Color(secondaryColor),
             image: DecorationImage(
               image: AssetImage("assets/images/card$i.png"),
-              fit: BoxFit.contain,
+              fit: BoxFit.fitWidth,
+              opacity: isClickable? 100:0
             ),
           ),
           child: Padding(
@@ -47,16 +54,18 @@ class BenefitsTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(icon,height: 24,width: 24,),
-                Text(title,style:TextStyle(color: Color(color),fontSize: 24,fontWeight: FontWeight.w600,fontFamily: "Roboto"),),
+                Text(title,style:TextStyle(color: Color(primaryColor),fontSize: 24,fontWeight: FontWeight.w600,fontFamily: "Roboto"),),
+                SizedBox(height: 4,),
                 Row(
                   children: List.generate(300~/5, (index) => Expanded(
                     child: Container(
                       color: index%2==0?Colors.transparent
-                          :isClickable? Colors.white:Color(color),
+                          :isClickable? Colors.white:Color(primaryColor),
                       height: 2,
                     ),
                   )),
                 ),
+                SizedBox(height: 8,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
