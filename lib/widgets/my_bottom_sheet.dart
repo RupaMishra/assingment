@@ -63,7 +63,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                           const SizedBox(height: 30,),
                           Image.asset(data.icon,height: 24,width: 24,color: Color(data.secondarycolor),),
                           const SizedBox(height: 10,),
-                          Text(data.title,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                          Text(data.title,textAlign:TextAlign.center,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                           const SizedBox(height: 10,),
                           Text(
                             "Click on plus icon to set the desired monthly amount for this allowance",

@@ -54,7 +54,7 @@ class BenefitsList extends StatelessWidget {
                         return Container(
                             margin: const EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFFFAFAFA),
+                              color: Color(flexiDataList[index].secondarycolor),
                               borderRadius: BorderRadius.circular(12), // Rounded corners with radius of 12
                               border: Border.all(color: const Color(0xFFFEEEEEE)), // Border properties
                             ),

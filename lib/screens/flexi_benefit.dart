@@ -114,7 +114,7 @@ class FlexiBenefit extends StatelessWidget {
                                         crossAxisCount: 2,
                                         crossAxisSpacing: 5,
                                         mainAxisSpacing: 5,
-                                        mainAxisExtent: 90.0
+                                        mainAxisExtent: 95.0
                                     ),
                                     itemBuilder: (context,index){
                                       return Container(
@@ -158,7 +158,7 @@ class FlexiBenefit extends StatelessWidget {
                                     Image.asset("assets/icons/question_mark.png"),
                                     const Padding(
                                       padding: EdgeInsets.symmetric(horizontal: 16.0),
-                                      child: Text("Frequently asked question",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,fontFamily: 'Inter'),),
+                                      child: Text("Frequently asked question",textAlign:TextAlign.left,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,fontFamily: 'Inter'),),
                                     )
                                   ],
                                 ),
