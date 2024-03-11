@@ -67,7 +67,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                           Text(data.title,textAlign:TextAlign.center,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                           const SizedBox(height: 10,),
                           Text(
-                            "Click on plus icon to set the desired monthly amount for this allowance",
+                            "Drag the bar to set the desired monthly amount for this allowance",
                             textAlign: TextAlign.center,
                             style:TextStyle(fontSize: 16,fontFamily: 'Inter',fontWeight: FontWeight.w500,color: Colors.grey[800]),
                           ),
