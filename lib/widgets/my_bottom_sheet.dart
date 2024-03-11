@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'my_slider.dart';
+
 class MyBottomSheet extends StatefulWidget {
   final ListBenefits data;
   final int index;
@@ -33,7 +35,6 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
     var myVariables = Provider.of<MyDataSet>(context);
     var allocatedAmt = data.allocatedFund;
     var currAllocatedAmt = 0;
-    double allocatedAmtProgress = allocatedAmt /  data.allocatedFund;
 
     return SizedBox(
       width: double.infinity,
@@ -71,36 +72,13 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                             style:TextStyle(fontSize: 16,fontFamily: 'Inter',fontWeight: FontWeight.w500,color: Colors.grey[800]),
                           ),
                           const SizedBox(height: 20,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              IconButton(onPressed: (){
-                                setState(() {
-                                  if(allocatedAmt>100) {
-                                    allocatedAmt -= 100;
-                                    currAllocatedAmt -= 100;
-                                  }else{
-                                    print("exception");
-                                    allocatedAmt = data.allocatedFund;
-                                    maxOutExp();
-                                  }
-                                });
-                              }, icon: Icon(Icons.remove_circle)),
-                              Text("\u20B9 $allocatedAmt",style: const TextStyle(fontSize: 28,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                              IconButton(onPressed: (){
-                                setState(() {
-                                  if(allocatedAmt<10000) {
-                                    allocatedAmt += 100;
-                                    currAllocatedAmt += 100;
-                                  }else{
-                                    print("exception");
-                                    allocatedAmt = data.allocatedFund;
-                                    maxOutExp();
-                                  }
-                                });
-                              }, icon: Icon(Icons.add_circle)),
-                            ],
-                          ),
+                          Text("\u20B9 $allocatedAmt",style: const TextStyle(fontSize: 28,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                          MySlider(currAllocatedAmt:currAllocatedAmt,allocatedAmt:allocatedAmt,data:data,index:index,onValueChanged: (value){
+                            allocatedAmt =value.toInt();
+                            currAllocatedAmt =value.toInt();
+                            setState(() {
+                            });
+                          },),
                           const SizedBox(height: 20,),
                           SizedBox(
                             width: double.infinity,
