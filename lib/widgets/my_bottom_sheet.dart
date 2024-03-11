@@ -66,11 +66,23 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                           const SizedBox(height: 10,),
                           Text(data.title,textAlign:TextAlign.center,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                           const SizedBox(height: 10,),
-                          Text(
-                            "Drag the bar to set the desired monthly amount for this allowance",
+                          RichText(
                             textAlign: TextAlign.center,
-                            style:TextStyle(fontSize: 16,fontFamily: 'Inter',fontWeight: FontWeight.w500,color: Colors.grey[800]),
-                          ),
+                            text: TextSpan(
+                              style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,fontFamily: 'Inter',color: Colors.grey[800]),
+                              children: const [
+                                TextSpan(
+                                  text: "Drag the bar to set the desired "
+                                ),
+                                TextSpan(
+                                  text: "monthly amount ",
+                                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
+                                ),
+                                TextSpan(
+                                    text: "for this allowance"
+                                ),
+                              ]
+                          ),),
                           const SizedBox(height: 20,),
                           Text("\u20B9 $allocatedAmt",style: const TextStyle(fontSize: 28,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
                           MySlider(currAllocatedAmt:currAllocatedAmt,allocatedAmt:allocatedAmt,data:data,index:index,onValueChanged: (value){
