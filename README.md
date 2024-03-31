@@ -27,4 +27,4 @@ Make sure you have Flutter installed on your machine. If not, you can follow the
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone [https://github.com/your-username/flutter-assignment-project.git](https://github.com/RupaMishra/assingment.git)
+   git clone https://github.com/RupaMishra/assingment.git
